@@ -1,0 +1,7 @@
+<Solution>
+  <Configurations>
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Project Path="Icoding/Icoding.vcxproj" Id="4d60e235-3f46-44f1-883a-9bffa53ea4dd" />
+</Solution>
