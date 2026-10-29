@@ -1,0 +1,32 @@
+# ===== Visual Studio / MSBuild =====
+.vs/
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+[Bb]in/
+[Oo]bj/
+
+# 用户与 IDE 本地状态
+*.user
+*.suo
+*.VC.db
+*.VC.opendb
+*.sln.docstates
+*.userosscache
+*.sln.iml
+
+# 自动生成的 C/C++ 中间文件
+*.obj
+*.pch
+*.ipch
+*.idb
+*.pdb
+*.ilk
+*.exp
+*.lib
+*.tlog
+
+# Windows 资源管理器
+Thumbs.db
+desktop.ini
