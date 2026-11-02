@@ -1,0 +1,7 @@
+<Solution>
+  <Configurations>
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Project Path="chess/chess.vcxproj" Id="ffaee244-920c-41fa-a1ab-28e031eb5af4" />
+</Solution>

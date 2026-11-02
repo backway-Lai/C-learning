@@ -1,0 +1,7 @@
+<Solution>
+  <Configurations>
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Project Path="wengkai_test/wengkai_test.vcxproj" Id="3fdb5424-30e3-411a-9b3f-294f9877a49e" />
+</Solution>
