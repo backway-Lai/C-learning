@@ -18,5 +18,8 @@
     <ClCompile Include="The_Biggest_and_Smallest_Words.c">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="C3\Encryption.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
