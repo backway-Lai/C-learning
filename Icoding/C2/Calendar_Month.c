@@ -20,7 +20,6 @@ Enter starting day of the week(1 = Sun, 7 = Sat) : 3
 
 int main() {
 	int a, b;
-	int const Days = 7;
 
 	printf("Enter number of days in month:\n");
 	scanf("%d", &a);
@@ -28,12 +27,19 @@ int main() {
 	scanf("%d", &b);
 
 	printf("日 一 二 三 四 五 六\n");
-
-	for (int i = 1;i <= a - 1;i++) {
+	for (int i = 1;i < b;i++) {
 		printf(" ");
 	}
-	for (int i = 1;i <= Days - a + 1;i++) {
-		printf("%d ", i);
+
+	for (int i = 1;i <= a;i++) {
+		if (b > 7) {
+			printf("\n");
+			b = 1;
+		}
+		if (i < 10) printf("  %d", i);
+		else printf(" %d", i);
+		b++;
 	}
+
 	return 0;
 }

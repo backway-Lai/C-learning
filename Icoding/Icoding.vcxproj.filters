@@ -15,10 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\C2\letter_grade.c">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="C3\Struct-1.c">
+    <ClCompile Include="C2\Calendar_Month.c">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>

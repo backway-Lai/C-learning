@@ -139,8 +139,7 @@
     </Manifest>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="..\C2\letter_grade.c" />
-    <ClCompile Include="C3\Struct-1.c" />
+    <ClCompile Include="C2\Calendar_Month.c" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
