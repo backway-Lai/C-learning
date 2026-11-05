@@ -20,9 +20,9 @@
 int main(void) {
     int a;
 
-    printf("Enter numerical grade : ");
+
     if (scanf("%d", &a) != 1) {
-        printf("Invalid input.\n");
+
         return 1;
     }
 
@@ -30,8 +30,8 @@ int main(void) {
     char letter_grade;
 
     if (a > 100 || a < 0) {
-        printf("Error, grade must be between 0 and 100.\n");
-        return 1;
+        printf("Error, grade must be between 0 and 100.");
+        return 0;
     }
 
     switch (b) {

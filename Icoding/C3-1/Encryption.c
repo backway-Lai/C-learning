@@ -36,5 +36,23 @@
 #include <string.h>
 
 int main() {
+	char str[100];
+	int shift = 0, len = 0;
 
+	fgets(str, sizeof(str), stdin);
+	len = strlen(str);
+	scanf("%d", &shift);
+	shift = shift % 26;
+
+	for (int i = 0;i < len;i++) {
+		if (str[i] >= 'a' && str[i] <= 'z') {
+			str[i] = (str[i] - 'a' + shift) % 26 + 'a';
+		}
+		if (str[i] >= 'A' && str[i] <= 'Z') {
+			str[i] = (str[i] - 'A' + shift) % 26 + 'A';
+		}
+	}
+	printf("%s\n", str);
+
+	return 0;
 }
