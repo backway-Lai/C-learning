@@ -26,4 +26,25 @@
 
 1. `for(;;)`与`while(1)`都表示不停止的逻辑，用break跳出。
 2. 使用`int`类型输入时，会将整个数字存入。而使用`char`类型时可以一个一个存入，此时可以用`getchar`或`fgets`。
-    
+3. 冒泡排序：
+    - 原理：相邻变量比大小，将最大的推向一边
+    - 实现：
+    ```c
+    void bubble_sort(int a[], int n) {
+    for (int i = 0; i < n - 1; i++) {
+        int swapped = 0;
+        for (int j = 0; j < n - 1 - i; j++) {
+            if (a[j] > a[j + 1]) {
+                int tmp = a[j];
+                a[j] = a[j + 1];
+                a[j + 1] = tmp;
+                swapped = 1;
+            }
+        }
+        if (swapped == 0)   // 本轮没有交换，已经有序
+            break;
+    }
+}
+    ```
+4. 三向比较函数：返回正值、负值或0。
+
