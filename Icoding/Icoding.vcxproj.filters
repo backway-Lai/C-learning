@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="C3-2\Struct-1.c">
+    <ClCompile Include="C3-2\Nearest_Spot.c">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>

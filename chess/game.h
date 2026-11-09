@@ -23,5 +23,7 @@ typedef struct {
     GameStatus status;
 } Game;
 
-void Game_Init();
-void Draw_the_Board();
+void Game_Init(Game* game);
+void Draw_the_Board(Game* game);
+MoveResult Game_Place(Game* game, int row, int col);
+void Game_Over(Game* game, int row, int col);

@@ -1,6 +1,7 @@
 #include "console.h"
 
 int Console_Init(Console* con) {
+    con->ready = 0;
     con->hInput = GetStdHandle(STD_INPUT_HANDLE);
     if (con->hInput == INVALID_HANDLE_VALUE) return 0;
     if (!GetConsoleMode(con->hInput, &con->oldMode)) return 0;

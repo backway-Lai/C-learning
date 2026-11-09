@@ -6,22 +6,46 @@
 int main(void) {
 
 	Game game;
-	Game* game_p = &game;
+	Console con;
+	CellPos pos;
 
-	Game_Init(game_p);
-	Draw_the_Board(game_p);
+	Game_Init(&game);
 
-	Console console;
-	Console* con = &console;
-	CellPos position;
-	CellPos* pos = &position;
+	if (!Console_Init(&con)) {
+		printf("Console init failed");
+		return 1;
+	}
 
-	Console_Init(con);
+	while (game.status == GAME_RUNNING) {
+		Console_CursorHome();
+		Draw_the_Board(&game);
 
-	Console_WaitCellClick(con, pos);
-	game_p->cells[pos->row][pos->col] = 'X';
+		pos.row = -1;
+		pos.col = -1;
 
-	Draw_the_Board(game_p);
+		if (!Console_WaitCellClick(&con, &pos)) {
+			break;
+		}
+
+		if (game.cells[pos.row][pos.col] != EMPTY_CELL) {
+			continue;
+		}
+
+		MoveResult result = Game_Place(&game, pos.row, pos.col);
+	    if (result == MOVE_ACCEPTED) Game_Over(&game, pos.row, pos.col);
+
+	}
+	Console_CursorHome();
+	Draw_the_Board(&game);
+
+	switch (game.status) {
+	    case GAME_X_WINS: printf("X wins!\n"); break;
+	    case GAME_O_WINS: printf("O wins!\n"); break;
+	    case GAME_DRAW:   printf("Draw!\n");   break;
+	    default: break;
+	}
+	printf("Valid move account:%d\n", game.move_count);
+	Console_Restore(&con);
 
 	return 0;
 }
