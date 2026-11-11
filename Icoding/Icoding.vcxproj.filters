@@ -18,5 +18,8 @@
     <ClCompile Include="C3-2\Nearest_Spot.c">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="C4-1\linked_list_merge.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
