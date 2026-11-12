@@ -19,7 +19,9 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="C4-1\链表_倒数查找.c" />
     <ClCompile Include="C4-1\链表_删除范围内结点.c" />
+    <ClCompile Include="C4-1\链表_合并.c" />
     <ClCompile Include="C4-1\顺序表_删除指定范围.c" />
     <ClCompile Include="C4-1\顺序表_删除重复.c" />
     <ClCompile Include="C4-1\顺序表_数据调整.c" />
