@@ -19,8 +19,8 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="C3-2\Nearest_Spot.c" />
-    <ClCompile Include="C4-1\linked_list_merge.c" />
+    <ClCompile Include="C4-1\顺序表_删除指定范围.c" />
+    <ClCompile Include="C4-1\顺序表_删除重复.c" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>18.0</VCProjectVersion>
