@@ -21,5 +21,11 @@
     <ClCompile Include="C4-1\顺序表_删除重复.c">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="C4-1\顺序表_数据调整.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="C4-1\链表_删除范围内结点.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
