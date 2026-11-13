@@ -33,5 +33,8 @@
     <ClCompile Include="C4-1\链表_合并.c">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="C4-2\队列_循环链表表示队列.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
