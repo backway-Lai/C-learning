@@ -22,15 +22,40 @@
 
 bool init_queue(LinkQueue* LQ)
 {
+	if (LQ == NULL) return false;
 
+	*LQ = (LinkQueueNode*)malloc(sizeof(LinkQueueNode));
+	(*LQ)->next = *LQ;
+	return true;
 }
 
 bool enter_queue(LinkQueue* LQ, ElemType x)
 {
+	if (LQ == NULL || *LQ == NULL) return false;
 
+	LinkQueue p = (LinkQueueNode*)malloc(sizeof(LinkQueueNode));
+	if (p == NULL) return false;
+	p->data = x;
+	p->next = (*LQ)->next;
+
+	(*LQ)->next = p;
+	*LQ = p;
+
+	return true;
 }
 
 bool leave_queue(LinkQueue* LQ, ElemType* x)
 {
+	if (LQ == NULL || *LQ == NULL) return false;
+	if ((*LQ)->next == *LQ) return false;
 
+	LinkQueue head = (*LQ)->next;
+	LinkQueue delete = head->next;
+
+	head->next = delete->next;
+	*x = delete->data;
+	free(delete);
+
+	if (head->next == head) *LQ = head;
+	return true;
 }
