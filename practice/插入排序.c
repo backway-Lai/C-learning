@@ -13,7 +13,17 @@ int main() {
 
 	for (int j = 1;j < MAXSIZE;j++) {
 		temp = str[j];
-		for (int i = )
+		int i = j - 1;
+
+		while (i >= 0 && temp < str[i]) {
+			str[i + 1] = str[i];
+			i--;
+		}
+		str[i + 1] = temp;
+	}
+
+	for (int i = 0;i < MAXSIZE;i++) {
+		printf("%d ", str[i]);
 	}
 
 	return 0;
