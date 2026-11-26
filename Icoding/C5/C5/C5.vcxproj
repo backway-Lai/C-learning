@@ -142,6 +142,7 @@
     <ClInclude Include="..\lab52.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\function.c" />
     <ClCompile Include="..\main.c" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

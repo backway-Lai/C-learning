@@ -1,0 +1,38 @@
+#include "lab52.h"
+#include <stdio.h>
+#include <stdlib.h>
+
+extern int CurrentCnt;
+
+void init_list(GoodsList** pL) {
+    FILE* fp;
+    GoodsInfo goodsinfo;
+    GoodsList* p, * r;
+
+    (*pL) = (GoodsList*)malloc(sizeof(GoodsList));
+    r = (*pL);
+    if ((fp = fopen(GOODS_FILE_NAME, "r")) == NULL) {
+        if ((fp = fopen(GOODS_FILE_NAME, "w")) == NULL)
+            printf("Cant read the file.\n");
+    }
+    else {
+        while (!feof(fp)) {
+            fscanf(fp, "%s", goodsinfo.goods_id);
+            fscanf(fp, "\t%s", goodsinfo.goods_name);
+            fscanf(fp, "\t%d", &goodsinfo.goods_price);
+            fscanf(fp, "\t%s", goodsinfo.goods_discount);
+            fscanf(fp, "\t%d", &goodsinfo.goods_amount);
+            fscanf(fp, "\t%d\n", &goodsinfo.goods_remain);
+
+            p = (GoodsList*)malloc(sizeof(GoodsList));
+            p->data = goodsinfo;
+            r->next = p;
+            r = p;
+            CurrentCnt++;
+
+        }
+    }
+    fclose(fp);
+    r->next = NULL;
+    printf("商品列表已建立，有%d个商品\n", CurrentCnt);
+} 
