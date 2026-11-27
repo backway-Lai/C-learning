@@ -86,3 +86,11 @@ bool delete_item(GoodsList* L, char* goods_id) {
     }
     return false;
 }
+
+GoodsList* search_item(GoodsList* L, char* goods_id) {
+    GoodsList* p = L;
+    while (p != NULL && strcmp(p->data.goods_id, goods_id)) {
+        p = p->next;
+    }
+    return p;
+}
