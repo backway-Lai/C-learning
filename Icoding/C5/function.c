@@ -71,3 +71,18 @@ bool insert_item(GoodsList* L, GoodsInfo item, int choice) {
         return true;
     }
 }
+
+bool delete_item(GoodsList* L, char* goods_id) {
+    GoodsList* p = L;
+    while (p->next != NULL) {
+        GoodsList* n = p->next;
+        if (!strcmp(n->data.goods_id, goods_id)) {
+            p->next = n->next;
+            free(n);
+            CurrentCnt--;
+            return true;
+        }
+        p = p->next;
+    }
+    return false;
+}
