@@ -51,20 +51,23 @@ bool insert_item(GoodsList* L, GoodsInfo item, int choice) {
         return true;
     }
 
-    if (choice == 1) {
+    /*if (choice == 1) {
         x->next = L->next->next;
         L->next = x;
         CurrentCnt++;
         return true;
-    } 
+    }*/ 
 
     if (choice < 0 || choice > CurrentCnt) return false;
 
-    else {
-        for (int i = 1;i <= choice;i++) {
+    if (choice > 0 && choice <= CurrentCnt) {
+        for (int i = 1;i < choice;i++) {
             p = p->next;
         }
 
-
+        x->next = p->next;
+        p->next = x;
+        CurrentCnt++;
+        return true;
     }
 }
