@@ -42,7 +42,7 @@ bool insert_item(GoodsList* L, GoodsInfo item, int choice) {
     GoodsList* p = L;
     x->data = item;
 
-    if (choice == 0) {
+    if (choice == 0) {                                //尾插法
         for (;p->next != NULL;p = p->next)
             ;
         p->next = x;
@@ -58,9 +58,9 @@ bool insert_item(GoodsList* L, GoodsInfo item, int choice) {
         return true;
     }*/ 
 
-    if (choice < 0 || choice > CurrentCnt) return false;
+    if (choice < 0 || choice > CurrentCnt + 1) return false;
 
-    if (choice > 0 && choice <= CurrentCnt) {
+    if (choice > 0 && choice <= CurrentCnt + 1) { //正常插入(必要注释：choice == CurrentCnt时相当于尾插)
         for (int i = 1;i < choice;i++) {
             p = p->next;
         }
