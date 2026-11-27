@@ -35,4 +35,36 @@ void init_list(GoodsList** pL) {
     fclose(fp);
     r->next = NULL;
     printf("商品列表已建立，有%d个商品\n", CurrentCnt);
-} 
+}
+
+bool insert_item(GoodsList* L, GoodsInfo item, int choice) {
+    GoodsList* x = (GoodsList*)malloc(sizeof(GoodsList));
+    GoodsList* p = L;
+    x->data = item;
+
+    if (choice == 0) {
+        for (;p->next != NULL;p = p->next)
+            ;
+        p->next = x;
+        x->next = NULL;
+        CurrentCnt++;
+        return true;
+    }
+
+    if (choice == 1) {
+        x->next = L->next->next;
+        L->next = x;
+        CurrentCnt++;
+        return true;
+    } 
+
+    if (choice < 0 || choice > CurrentCnt) return false;
+
+    else {
+        for (int i = 1;i <= choice;i++) {
+            p = p->next;
+        }
+
+
+    }
+}
