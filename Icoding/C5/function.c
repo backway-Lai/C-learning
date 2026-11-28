@@ -129,3 +129,9 @@ void destory_list(GoodsList** L) {
 
     CurrentCnt = 0;
 }
+
+void destory_list_and_file(GoodsList** L) {
+    destory_list(L);
+
+    remove("goodinfo.txt");
+}
