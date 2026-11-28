@@ -116,3 +116,16 @@ void output_all_items(GoodsList* L) {
         p = p->next;
     }
 }
+
+void destory_list(GoodsList** L) {
+    GoodsList* p = (*L)->next;
+    GoodsList* q = *L;
+
+    for (;p != NULL;q = p, p = p->next) {
+        free(q);
+    }
+    free(q);
+    *L = NULL;
+
+    CurrentCnt = 0;
+}
