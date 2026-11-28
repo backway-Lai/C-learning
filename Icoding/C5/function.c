@@ -108,3 +108,11 @@ bool change_item(GoodsList* L, char* goods_id, GoodsInfo new_info) {
 void output_one_item(GoodsList* p) {
     printf("%s\t%s\t%d\t%s\t%d\t%d", p->data.goods_id, p->data.goods_name, p->data.goods_price, p->data.goods_discount, p->data.goods_amount, p->data.goods_remain);
 }
+
+void output_all_items(GoodsList* L) {
+    GoodsList* p = L->next;
+    while (p != NULL) {
+        output_one_item(p);
+        p = p->next;
+    }
+}
