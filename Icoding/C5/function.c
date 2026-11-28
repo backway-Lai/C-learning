@@ -177,3 +177,20 @@ void bubble_sort(GoodsList* L) {
         }
     }
 }
+
+GoodsInfo read_goods_info() {
+    GoodsInfo a;
+    if (!read_line(a.goods_id, MAX_ID_LEN)) {
+        GoodsInfo fail;
+        fail.goods_price = -1;
+        return fail;
+    }
+    
+    read_line(a.goods_name, MAX_NAME_LEN);
+    scanf("%d", &a.goods_price);
+    read_line(a.goods_discount, MAX_DISCOUNT_LEN);
+    scanf("%d", &a.goods_amount);
+    scanf("%d", &a.goods_remain);
+
+    return a;
+}
