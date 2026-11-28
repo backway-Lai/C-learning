@@ -160,3 +160,20 @@ int save_to_file(GoodsList* L) {
     L = NULL;
     return number;
 }
+
+void bubble_sort(GoodsList* L) {
+    if (CurrentCnt <= 1) return;
+
+    for (int i = 1;i < CurrentCnt;i++) {
+        for (GoodsList* j = L;j->next->next != NULL;j = j->next) {
+            GoodsList* a = j->next;
+            GoodsList* b = a->next;
+            if (a->data.goods_price > b->data.goods_price) {
+                GoodsList* temp = b->next;
+                j->next = b;
+                b->next = a;
+                a->next = temp;
+            }
+        }
+    }
+}
