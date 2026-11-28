@@ -94,3 +94,13 @@ GoodsList* search_item(GoodsList* L, char* goods_id) {
     }
     return p;
 }
+
+bool change_item(GoodsList* L, char* goods_id, GoodsInfo new_info) {
+    GoodsList* p = L;
+    while (p != NULL && strcmp(p->data.goods_id, goods_id)) {
+        p = p->next;
+    }
+    if (p == NULL) return false;
+    else p->data = new_info;
+    return true;
+}
