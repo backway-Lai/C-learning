@@ -135,3 +135,28 @@ void destory_list_and_file(GoodsList** L) {
 
     remove("goodinfo.txt");
 }
+
+int save_to_file(GoodsList* L) {
+    int number = 0;
+    FILE* fp;
+
+    if (L == NULL) return 0;
+
+    GoodsList* p = L->next;
+    if ((fp = fopen("goodsinfo.txt", "w")) == NULL) return 0;
+
+    while (p != NULL) {
+        fprintf(fp, "%s\t", p->data.goods_id);
+        fprintf(fp, "%s\t", p->data.goods_name);
+        fprintf(fp, "%d\t", p->data.goods_price);
+        fprintf(fp, "%s\t", p->data.goods_discount);
+        fprintf(fp, "%d\t", p->data.goods_amount);
+        fprintf(fp, "%d\t", p->data.goods_remain);
+        
+        p = p->next;
+        number++;
+    }
+
+    L = NULL;
+    return number;
+}
